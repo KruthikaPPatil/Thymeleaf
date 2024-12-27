@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <div align="center">
+     <a href="/otp"><button>OTP</button></a>
+         <br>
+
+         <h1 th:text="${@myClass.myMethod()}"></h1>
+        <div th:if="${otp}">
+             <h1 th:text="'The otp is: '+${otp}"></h1>
+        </div>
+        <br>
+        <div>
+         <form action="/circle" method="post">
+            <input type="text" name="color" placeholder="Enter the color">
+            <input type="text" name="height" placeholder="Enter Height">
+            <input type="text" name="width" placeholder="Enter Width">
+             <button>Print</button>
+         </form>
+        </div>
+<br>
+        <div th:if="${color}"   th:style="'height:'+${height}+'px;width: '+${width}+'px;background-color: '+${color}+';border:2px solid black;border-radius:50%;'">
+            
+        </div>
+            
+
+    </div>
+
+
+    <script th:if="${color}" th:inline="javascript">
+     alert([[${color}]])
+    </script>
+</body>
+</html>
